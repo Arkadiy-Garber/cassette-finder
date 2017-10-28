@@ -3,8 +3,6 @@ Proteins that interact with each other in vivo are often transcribed together un
 
 This program requires a Mac operating system, with Python, version 3 or later, installed.
 
-Two arguments must be passed to this program:
+Usage:
 
-    -One is a a file containing sequences of interest (i.e. sequences that you expect to be encoded closely together on the same chromosome) in fasta format.
-  
-    -The second argument that must be passed is the location of a database in which homologs to the genes will be searched for. This could be either the non-redundant (nr) NCBI database, or a folder containing genomes (in fasta format) in which you expect the gene cassettes to be encoded in. If your choice the latter, then you must the program with '-DB local'. Otherwise, the default option '-DB nr' will be called.
+You can provide this program with as many genes, in FASTA amino acid format, as you would like. These genes will be blasted across a database (for example, NCBI or RefSeq), and then clusetered according to acession numbers.
