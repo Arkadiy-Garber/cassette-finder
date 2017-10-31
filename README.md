@@ -3,7 +3,9 @@ Proteins that interact with each other in vivo are often transcribed together un
 
 # Dependencies
   -MacOS
+  
   -Python3
+  
   -BLAST
 
 Usage:
