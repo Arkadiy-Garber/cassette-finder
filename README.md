@@ -8,6 +8,6 @@ Proteins that interact with each other in vivo are often transcribed together un
   
   -BLAST
 
-Usage:
+# Usage:
 
 You can provide this program with as many genes, in FASTA amino acid format, as you would like. These genes will be blasted across a database (for example, NCBI or RefSeq), and then clusetered according to acession numbers.
