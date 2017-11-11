@@ -44,7 +44,11 @@ optional arguments:
 
 
 
-Example of using the program to blast genes against a small set of genomes in a local folder and find gene cassettes:
+# Example of using the program to blast genes against a small set of genomes in a local folder:
 
     python3 cassette_finderV1.py -genes gene.faa -db Zetaproteobacteria_folder -db_type folder -output gene_cassettes -g 10 -n 3
-
+    
+    
+# Example of using the program to blast genes against the non-redundant NCBI database:
+    
+    python3 cassette_finderV1.py -genes gene.faa -db /usr/local/blast_db/nr -db_type nr -output gene_cassettes -g 10 -n 3
