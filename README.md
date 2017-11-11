@@ -25,21 +25,21 @@ optional arguments:
   -genes [input file]      fasta file containing genes of interest (i.e. genes that
                     are expected to be in gene cassette)
                     
-  -db [database (local directory of either genomes in FASTA format or an NCBI database]            Location of the the NCBI protein database or folder
+  -db [database (local directory of either genomes in FASTA format or an NCBI database)]            Location of the the NCBI protein database or folder
                     containing translated genomes in fasta format
                     
-  -db_type DB_TYPE  the type of database to search in (folder, nr, or refseq)
+  -db\_type [the type of directory you have specified with the -db option]  the type of database to search in (folder, nr, or refseq)
   
-  -output OUTPUT    name of output folder to write results in
+  -output [ouput folder]    name of output folder to write results in
   
-  -t T              Number of threads to use (default=1)
+  -t [int]              Number of threads to use (default=1)
   
-  -e E              E-value cut-off for gene homology (default=1E-5)
+  -e [float]              E-value cut-off for gene homology (default=1E-5)
   
-  -g G              Max gap for gene separation (i.e. maximum number of genes
+  -g [int]              Max gap for gene separation (i.e. maximum number of genes
                     between genes of interest) (default=40)
                     
-  -n N              Minimum number of genes you would like to see in cassette
+  -n [int]              Minimum number of genes you would like to see in cassette
                     or cluster (default=2)
 
 
