@@ -43,6 +43,8 @@ optional arguments:
                     or cluster (default=2)
 
 
+
 Example of using the program to blast genes against a small set of genomes in a local folder and find gene cassettes:
+
     python3 cassette_finderV1.py -genes gene.faa -db Zetaproteobacteria_folder -db_type folder -output gene_cassettes -g 10 -n 3
 
