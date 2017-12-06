@@ -156,12 +156,12 @@ def remove(stringOrlist, list):
 
 def main():
     if args.db_type == "nr" or args.db_type == "refseq":
-        #os.system("mkdir " + args.output + "/blast")
-        #print("made file: " + args.output + "/blast")
-        #print("blasting against the NCBI database...")
-        #os.system("blastp -query " + args.genes + " -db " + args.db + " -num_threads " + str(args.t) + " -out " + cwd +
-                 # "/" + args.output + "/blast/blastResults -evalue " + str(args.e) + " -outfmt 6")
-        #print("blast finished\n\nreading in the results\n")
+        os.system("mkdir " + args.output + "/blast")
+        print("made file: " + args.output + "/blast")
+        print("blasting against the NCBI database...")
+        os.system("blastp -query " + args.genes + " -db " + args.db + " -num_threads " + str(args.t) + " -out " + cwd +
+                  "/" + args.output + "/blast/blastResults -evalue " + str(args.e) + " -outfmt 6")
+        print("blast finished\n\nreading the results\n")
         blast = open(cwd + "/" + args.output + "/blast/blastResults", "r")
         AccessionDict = defaultdict(lambda: defaultdict(lambda: 'EMPTY'))
         bDict = defaultdict(lambda: defaultdict(lambda: 'EMPTY'))
@@ -198,9 +198,6 @@ def main():
                                     j1 = (j.split(">")[1])
                                     j2 = (j1.split("<")[0])
                                     j2 = remove(j2, [","])
-                                    # org = (re.search(r'((\[)(.*)(\]))', j2).group(1))
-                                    # prot = (j2.split("[")[0])
-                                    # outfile.write(prot + "," + org + ",")
                                     outfile.write(str(count) + ",")
                                     outfile.write(j2 + ",")
                                     accession = AccessionDict[accession]
@@ -208,11 +205,6 @@ def main():
                                     for k in bDict[accession]:
                                         outfile.write(k + ",")
                                     outfile.write("\n")
-                                # except IndexError:
-                                #     outfile.write(j2 + "," + "" + ",")
-                                #     for col in bDict[accession]:
-                                #         outfile.write(col + ",")
-                                #     outfile.write("\n")
                     except HTTPError:
                         outfile.write("Not found in NCBI" + ",")
                         accession = AccessionDict[accession]
@@ -263,7 +255,6 @@ def main():
                         outfile.write("\n")
                     outfile.write("\n")
             outfile.write("\n")
-
             os.system("rm " + args.db + "/" + genome + ".numbered.phr")
             os.system("rm " + args.db + "/" + genome + ".numbered.pin")
             os.system("rm " + args.db + "/" + genome + ".numbered.psq")
